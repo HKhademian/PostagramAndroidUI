@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+	compileSdkVersion 28
+
+	defaultConfig {
+		minSdkVersion 9
+		targetSdkVersion 28
+		versionCode POM_VERSION_CODE.toInteger()
+		versionName POM_VERSION_NAME
+	}
+
+	buildTypes {
+		release {
+			proguardFiles 'proguard-rules.pro'
+		}
+	}
+}
+
+dependencies {
+	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.41'
+  implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.2'
+}
+
+apply from: 'https://gist.githubusercontent.com/HossainKhademian/f7ef8bf694d96a565198e31d77956537/raw/63ffc045fc42516ae368a3b1a7a1e2e826ddece4/publish.gradle'
